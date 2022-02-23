@@ -176,7 +176,7 @@ int main()
 					print_StackMenu();
 					std::cin >> SecondMenu;
 				}
-				else if (SecondMenu == 4) // exit //
+				else // exit //
 				{
 					break;
 				}
@@ -242,7 +242,7 @@ int main()
 					print_QueueMenu();
 					std::cin >> SecondMenu;
 				}
-				else if (SecondMenu == 4) // exit //
+				else // exit //
 				{
 					break;
 				}
