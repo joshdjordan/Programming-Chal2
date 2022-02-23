@@ -161,7 +161,7 @@ int main()
 					}
 					else // if no items are in the stack to remove //
 					{
-						std::cout << "Error! Your inventory is empty. Please enter a part before you remove one!";
+						std::cout << "ERROR! Your inventory is empty. Please enter a part before you remove one!";
 						
 						print_StackMenu();
 						std::cin >> SecondMenu;
@@ -178,6 +178,10 @@ int main()
 						std::cout << "Lot Number: " << part.get_LotNum() << std::endl;
 
 						stack.pop();
+					}
+					if (stack.empty())
+					{
+						std::cout << "ERROR! PLease enter add a part before choosing to display your inventory list." << std::endl;
 					}
 					print_StackMenu();
 					std::cin >> SecondMenu;
@@ -229,7 +233,7 @@ int main()
 					}
 					else // if no items are in the queue to remove //
 					{
-						std::cout << "Error! Your inventory is empty. Please enter a part before you remove one!";
+						std::cout << "ERROR! Your inventory is empty. Please enter a part before you remove one!";
 
 						print_QueueMenu();
 						std::cin >> SecondMenu;
@@ -246,6 +250,10 @@ int main()
 						std::cout << "Lot Number: " << part.get_LotNum() << std::endl;
 
 						queue.pop();
+					}
+					if (queue.empty())
+					{
+						std::cout << "ERROR! Please enter add a part before choosing to display the inventory list." << std::endl;
 					}
 					print_QueueMenu();
 					std::cin >> SecondMenu;
