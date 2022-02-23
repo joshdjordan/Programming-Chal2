@@ -5,8 +5,7 @@ Date: 2/22/2021
 Description: Assignment is to create an 'inventory' class and prompt the user to choose between a stack or a queue and use
 both of those abstract data types to manage the inventory. User will input information on the part via prompt.
 
-NOTES: Currently only issue with code is 'exit' option is not exiting the code. This is most likely due to line 120. Although
-the code is exiting the way it is supposed to line 120 is reinitializing the menu instead of full breaking from all of the loops.
+NOTES: NO NOTES.
 */
 
 #include <iostream>
