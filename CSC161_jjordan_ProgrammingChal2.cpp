@@ -2,7 +2,8 @@
 File Name: CSC161_jjordan_ProgrammingChal2.cpp
 Author: Josh Jordan
 Date: 2/22/2021
-Description:
+Description: Assignment is to create an 'inventory' class and prompt the user to choose between a stack or a queue and use
+both of those abstract data types to manage the inventory. User will input information on the part via prompt.
 
 Notes:
 */
@@ -236,7 +237,7 @@ int main()
 						queue.pop();
 					}
 				}
-				else
+				else // exit //
 				{
 					break;
 				}
