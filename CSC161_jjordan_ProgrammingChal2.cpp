@@ -17,7 +17,7 @@ class inventory
 public:
 	// CONSTRUCTORS //
 
-	inventory() //default constructor
+	inventory() // default constructor
 	{
 		SerialNum = 0123;
 		ManufactureDate = "01/12/23";
