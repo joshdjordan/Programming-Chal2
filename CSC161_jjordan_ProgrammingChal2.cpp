@@ -15,10 +15,7 @@ Notes:
 class inventory
 {
 public:
-
-	/****************
-	 * CONSTRUCTORS *
-	 ****************/
+	// CONSTRUCTORS //
 
 	inventory() //default constructor
 	{
@@ -34,10 +31,8 @@ public:
 		lotNum = LotNum;
 	}
 
-
-	/***********
-	 * GETTERS *
-	 ***********/
+	
+	// GETTERS //
 
 	int get_SerialNumber()
 	{
@@ -54,9 +49,7 @@ public:
 	}
 
 
-	/***********
-	 * SETTERS *
-	 ***********/
+	// SETTERS //
 
 	void set_SerialNumber(int serialNum)
 	{
@@ -80,9 +73,7 @@ private:
 
 
 
-/******************
- * MAIN FUNCTIONS *
- ******************/
+// MAIN FUNCTIONS //
 
 void print_FirstMenu()
 {
@@ -138,8 +129,7 @@ int main()
 					std::cout << "Enter the lot number where the part is stored.\n> ";
 					std::cin >> LotNum;
 
-					//StackPart(SerialNum, ManufactureDate, LotNum); // constructing information to 'inventory object'
-					stack.push(StackPart);
+					StackPart(SerialNum, ManufactureDate, LotNum); // constructing information to 'inventory object'
 				}
 				else if (SecondMenu == 2) // removing the most recent part from the stack
 				{
@@ -166,7 +156,7 @@ int main()
 					std::cout << "Enter the lot number where the part is stored.\n> ";
 					std::cin >> LotNum;
 				}
-				else if (SecondMenu == 2) // removing the first part from the queue
+				else if (SecondMenu == 2) // removing the first 'part' from the queue
 				{
 
 				}
