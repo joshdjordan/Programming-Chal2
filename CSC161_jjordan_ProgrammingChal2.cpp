@@ -4,7 +4,15 @@ Author: Josh Jordan
 Date: 2/22/2021
 Description: Assignment is to create an 'inventory' class and prompt the user to choose between a stack or a queue and use
 both of those abstract data types to manage the inventory. User will input information on the part via prompt.
-NOTES: NO NOTES.
+
+NOTES: You (the user) on run, will be prompted the first menu to choose between whether you want to work with a queue or a 
+stack. You will then proceed to enter information into the inventory bin. If you choose to add a part to an inventory you
+will be prompted to enter the parts serial number, manufacture date, and the lot number where the part is stored. Once all
+information has been entered you will be prompted back to the menu to pick another option. You can either add another item,
+remove an item, which will differ depending if you chose a stack or a queue. If you chose a stack the most recent item will
+be removed. If you chose queue the first item that was entered will be removed. When chosen to remove an item the the 
+program will display the item that has been removed. The menu will then display again given all the options once again.
+This will continue until the user will enter '4' which will terimate the program.
 */
 
 #include <iostream>
