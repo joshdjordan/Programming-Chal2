@@ -4,7 +4,6 @@ Author: Josh Jordan
 Date: 2/22/2021
 Description: Assignment is to create an 'inventory' class and prompt the user to choose between a stack or a queue and use
 both of those abstract data types to manage the inventory. User will input information on the part via prompt.
-
 NOTES: NO NOTES.
 */
 
@@ -18,7 +17,7 @@ class inventory
 public:
 	// CONSTRUCTORS //
 
-	inventory() // default constructor
+	inventory() // default constructor //
 	{
 		SerialNum = 0123;
 		ManufactureDate = "01/12/23";
@@ -164,7 +163,7 @@ int main()
 				{
 					while (!stack.empty())
 					{
-						part = stack.top(); // TESTING.... COUDL BE BUG? // <---- ATTENTION ATTENTION ATTENTION ATTENTION ATTENTION ATTENTION
+						part = stack.top(); // sets class object to the top element of the stack //
 
 						std::cout << "\nSerial Number: " << part.get_SerialNumber() << std::endl;
 						std::cout << "Manufacture Date: " << part.get_ManufactureDate() << std::endl;
@@ -188,7 +187,7 @@ int main()
 			std::cin >> SecondMenu;
 			while (SecondMenu > 0 && SecondMenu < 4)
 			{
-				if (SecondMenu == 1) // adding a part to the queue
+				if (SecondMenu == 1) // adding a part to the queue //
 				{
 					std::cout << "\nEnter the serial number of the part you would like to enter.\n> ";
 					std::cin >> SerialNum;
@@ -204,11 +203,11 @@ int main()
 					print_QueueMenu();
 					std::cin >> SecondMenu;
 				}
-				else if (SecondMenu == 2) // removing the most recent 'part' from the queue
+				else if (SecondMenu == 2) // removing the most recent 'part' from the queue //
 				{
 					if (queue.size() > 0)
 					{
-						part = queue.front();
+						part = queue.front(); // sets the front element of the queue to the class object //
 						std::cout << "Serial Number: " << part.get_SerialNumber() << std::endl;
 						std::cout << "Manufacture Date: " << part.get_ManufactureDate() << std::endl;
 						std::cout << "Lot Number: " << part.get_LotNum() << std::endl;
@@ -228,11 +227,11 @@ int main()
 						std::cin >> SecondMenu;
 					}
 				}
-				else if (SecondMenu == 3) // viewing all parts in the queue
+				else if (SecondMenu == 3) // viewing all parts in the queue //
 				{
 					while (!queue.empty())
 					{
-						part = queue.front(); // TESTING.... COUDL BE BUG? // <---- ATTENTION ATTENTION ATTENTION ATTENTION ATTENTION ATTENTION
+						part = queue.front(); // sets the front element of the queue to the class object //
 
 						std::cout << "\nSerial Number: " << part.get_SerialNumber() << std::endl;
 						std::cout << "Manufacture Date: " << part.get_ManufactureDate() << std::endl;
