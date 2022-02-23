@@ -5,7 +5,8 @@ Date: 2/22/2021
 Description: Assignment is to create an 'inventory' class and prompt the user to choose between a stack or a queue and use
 both of those abstract data types to manage the inventory. User will input information on the part via prompt.
 
-Notes:
+NOTES: Currently only issue with code is 'exit' option is not exiting the code. This is most likely due to line 120. Although
+the code is exiting the way it is supposed to line 120 is reinitializing the menu instead of full breaking from all of the loops.
 */
 
 #include <iostream>
@@ -27,9 +28,9 @@ public:
 
 	inventory(int serialNum, std::string manufactureDate, int lotNum)
 	{
-		serialNum = SerialNum;
-		manufactureDate = ManufactureDate;
-		lotNum = LotNum;
+		set_SerialNum(serialNum);
+		set_ManufactureDate(manufactureDate);
+		set_LotNum(lotNum);
 	}
 
 	
@@ -52,7 +53,7 @@ public:
 
 	// SETTERS //
 
-	void set_SerialNumber(int serialNum)
+	void set_SerialNum(int serialNum)
 	{
 		SerialNum = serialNum;
 	}
@@ -86,7 +87,7 @@ void print_FirstMenu()
 
 void print_StackMenu()
 {
-	std::cout << "----------------- STACK -----------------" << std::endl;
+	std::cout << "\n----------------- STACK -----------------" << std::endl;
 	std::cout << "1) Add a part to inventory" << std::endl;
 	std::cout << "2) Remove most recent part from inventory" << std::endl;
 	std::cout << "3) View inventory" << std::endl;
@@ -95,7 +96,7 @@ void print_StackMenu()
 
 void print_QueueMenu()
 {
-	std::cout << "----------------- QUEUE -----------------" << std::endl;
+	std::cout << "\n----------------- QUEUE -----------------" << std::endl;
 	std::cout << "1) Add a part to inventory" << std::endl;
 	std::cout << "2) Remove the first part from inventory" << std::endl;
 	std::cout << "3) View inventory" << std::endl;
@@ -123,7 +124,7 @@ int main()
 			{
 				if (SecondMenu == 1) // adding a part to a stack //
 				{
-					std::cout << "Enter the serial number of the part you would like to enter.\n> ";
+					std::cout << "\nEnter the serial number of the part you would like to enter.\n> ";
 					std::cin >> SerialNum;
 
 					std::cout << "Enter the date the part was manufactured (XX/XX/20XX).\n> ";
@@ -172,8 +173,10 @@ int main()
 
 						stack.pop();
 					}
+					print_StackMenu();
+					std::cin >> SecondMenu;
 				}
-				else // exit //
+				else if (SecondMenu == 4) // exit //
 				{
 					break;
 				}
@@ -187,7 +190,7 @@ int main()
 			{
 				if (SecondMenu == 1) // adding a part to the queue
 				{
-					std::cout << "Enter the serial number of the part you would like to enter.\n> ";
+					std::cout << "\nEnter the serial number of the part you would like to enter.\n> ";
 					std::cin >> SerialNum;
 
 					std::cout << "Enter the date the part was manufactured (XX/XX/20XX).\n> ";
@@ -201,7 +204,7 @@ int main()
 					print_QueueMenu();
 					std::cin >> SecondMenu;
 				}
-				else if (SecondMenu == 2) // removing the first 'part' from the queue
+				else if (SecondMenu == 2) // removing the most recent 'part' from the queue
 				{
 					if (stack.size() > 0)
 					{
@@ -236,8 +239,10 @@ int main()
 
 						queue.pop();
 					}
+					print_QueueMenu();
+					std::cin >> SecondMenu;
 				}
-				else // exit //
+				else if (SecondMenu == 4) // exit //
 				{
 					break;
 				}
