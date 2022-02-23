@@ -181,6 +181,7 @@ int main()
 					break;
 				}
 			}
+			break;
 		}
 		else
 		{
@@ -206,24 +207,25 @@ int main()
 				}
 				else if (SecondMenu == 2) // removing the most recent 'part' from the queue
 				{
-					if (stack.size() > 0)
+					if (queue.size() > 0)
 					{
+						part = queue.front();
 						std::cout << "Serial Number: " << part.get_SerialNumber() << std::endl;
 						std::cout << "Manufacture Date: " << part.get_ManufactureDate() << std::endl;
 						std::cout << "Lot Number: " << part.get_LotNum() << std::endl;
 
-						stack.pop();
+						queue.pop();
 
 						std::cout << "\nPart has been removed..." << std::endl;
 
-						print_StackMenu();
+						print_QueueMenu();
 						std::cin >> SecondMenu;
 					}
 					else // if no items are in the queue to remove //
 					{
 						std::cout << "Error! Your inventory is empty. Please enter a part before you remove one!";
 
-						print_StackMenu();
+						print_QueueMenu();
 						std::cin >> SecondMenu;
 					}
 				}
@@ -247,6 +249,7 @@ int main()
 					break;
 				}
 			}
+			break;
 		}
 	}
 	std::cout << "Exiting..." << std::endl;
