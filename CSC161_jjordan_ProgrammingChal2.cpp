@@ -148,7 +148,7 @@ int main()
 				{
 					if (stack.size() > 0)
 					{
-						std::cout << "Serial Number: " << part.get_SerialNumber() << std::endl;
+						std::cout << "\nSerial Number: " << part.get_SerialNumber() << std::endl;
 						std::cout << "Manufacture Date: " << part.get_ManufactureDate() << std::endl;
 						std::cout << "Lot Number: " << part.get_LotNum() << std::endl;
 						
@@ -161,7 +161,7 @@ int main()
 					}
 					else // if no items are in the stack to remove //
 					{
-						std::cout << "ERROR! Your inventory is empty. Please enter a part before you remove one!";
+						std::cout << "\nERROR! Your inventory is empty. Please enter a part before you remove one!" << std::endl;
 						
 						print_StackMenu();
 						std::cin >> SecondMenu;
@@ -169,6 +169,10 @@ int main()
 				}
 				else if (SecondMenu == 3) // viewing all parts in the stack //
 				{
+					if (stack.empty())
+					{
+						std::cout << "\nERROR! PLease enter add a part before choosing to display your inventory list." << std::endl;
+					}
 					while (!stack.empty())
 					{
 						part = stack.top(); // sets class object to the top element of the stack //
@@ -178,10 +182,6 @@ int main()
 						std::cout << "Lot Number: " << part.get_LotNum() << std::endl;
 
 						stack.pop();
-					}
-					if (stack.empty())
-					{
-						std::cout << "ERROR! PLease enter add a part before choosing to display your inventory list." << std::endl;
 					}
 					print_StackMenu();
 					std::cin >> SecondMenu;
@@ -220,7 +220,7 @@ int main()
 					if (queue.size() > 0)
 					{
 						part = queue.front(); // sets the front element of the queue to the class object //
-						std::cout << "Serial Number: " << part.get_SerialNumber() << std::endl;
+						std::cout << "\nSerial Number: " << part.get_SerialNumber() << std::endl;
 						std::cout << "Manufacture Date: " << part.get_ManufactureDate() << std::endl;
 						std::cout << "Lot Number: " << part.get_LotNum() << std::endl;
 
@@ -233,7 +233,7 @@ int main()
 					}
 					else // if no items are in the queue to remove //
 					{
-						std::cout << "ERROR! Your inventory is empty. Please enter a part before you remove one!";
+						std::cout << "\nERROR! Your inventory is empty. Please enter a part before you remove one!";
 
 						print_QueueMenu();
 						std::cin >> SecondMenu;
@@ -241,6 +241,10 @@ int main()
 				}
 				else if (SecondMenu == 3) // viewing all parts in the queue //
 				{
+					if (queue.empty())
+					{
+						std::cout << "\nERROR! Please enter add a part before choosing to display the inventory list." << std::endl;
+					}
 					while (!queue.empty())
 					{
 						part = queue.front(); // sets the front element of the queue to the class object //
@@ -250,10 +254,6 @@ int main()
 						std::cout << "Lot Number: " << part.get_LotNum() << std::endl;
 
 						queue.pop();
-					}
-					if (queue.empty())
-					{
-						std::cout << "ERROR! Please enter add a part before choosing to display the inventory list." << std::endl;
 					}
 					print_QueueMenu();
 					std::cin >> SecondMenu;
@@ -266,7 +266,7 @@ int main()
 			break;
 		}
 	}
-	std::cout << "Exiting..." << std::endl;
+	std::cout << "\nExiting..." << std::endl;
 
 	return 0;
 }
